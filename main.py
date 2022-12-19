@@ -10,12 +10,14 @@ principal_name = headers.get("X-Ms-Client-Principal-Name")
 principal_id = headers.get("X-Ms-Client-Principal-Id")
 access_token = headers.get("X-Ms-Token-Aad-Access-Token")
 
+st.header("AzureAD's auth results")
+
 if principal_name is not None:
     st.markdown('X-Ms-Client-Principal-Name: ' + principal_name)
 if principal_id is not None:
-    st.markdown('X-Ms-Client-Principal-Name: ' + principal_id)
+    st.markdown('X-Ms-Client-Principal-Id: ' + principal_id)
 if access_token is not None:
-    st.markdown('X-Ms-Client-Principal-Name: ' + access_token)
+    st.markdown('X-Ms-Token-Aad-Access-Token: ' + access_token)
 
 st.header('http headers count')
 st.text(len(headers))
